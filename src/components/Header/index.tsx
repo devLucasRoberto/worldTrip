@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export function Header() {
   return (
-    <Flex my={27} mx={140}>
+    <Flex my={27} mx={140} alignItems="center">
       <Box>
         <Link href="/" passHref>
           <ChakraLink>
