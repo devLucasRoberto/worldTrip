@@ -1,6 +1,7 @@
 import { Flex, Box, Center, Text, VStack } from '@chakra-ui/react'
 import { Banner } from '../components/Banner'
 import { Header } from '../components/Header'
+import { SwiperC } from '../components/SwiperC'
 import { TravelTypes } from '../components/TravelTypes'
 
 export default function Home() {
@@ -28,7 +29,9 @@ export default function Home() {
           </Text>
         </VStack>
       </Center>
-      <h1>home</h1>
+      <Box>
+        <SwiperC />
+      </Box>
     </Flex>
   )
 }
