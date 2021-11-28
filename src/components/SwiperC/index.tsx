@@ -22,7 +22,7 @@ export function SwiperC() {
       >
         <SwiperSlide>
           <Flex position="relative" alignItems="center" justifyContent="center">
-            <Image src="swiperpng.png" />
+            <Image src="swiperpng.png" height="450" objectFit="cover" />
             <Flex position="absolute" top="0" height="100%" zIndex="5">
               <Flex justifyContent="center" alignItems="center">
                 <VStack>
