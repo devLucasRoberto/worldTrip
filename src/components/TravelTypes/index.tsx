@@ -1,5 +1,5 @@
 import { Flex } from '@chakra-ui/react'
-import { TravelTypeIcon } from './travelTypeIcon'
+import { TravelTypeIcon } from './TravelTypeIcon'
 
 export function TravelTypes() {
   return (

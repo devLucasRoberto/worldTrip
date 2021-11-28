@@ -1,4 +1,4 @@
-import { Box, Text, Image, Flex, Stack } from '@chakra-ui/react'
+import { Text, Image, Flex, Stack } from '@chakra-ui/react'
 
 interface CityCardProps {
   country: string

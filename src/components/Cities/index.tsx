@@ -1,4 +1,4 @@
-import { Box, Text, SimpleGrid, Image, Flex, Stack } from '@chakra-ui/react'
+import { Box, Text, SimpleGrid } from '@chakra-ui/react'
 import { CityCard } from './CityCard'
 
 export function Cities() {
