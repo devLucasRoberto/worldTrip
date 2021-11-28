@@ -1,4 +1,5 @@
 import { Flex } from '@chakra-ui/react'
+import { Cities } from '../../components/Cities'
 import { ContinentBanner } from '../../components/ContinentBanner'
 import { Header } from '../../components/Header'
 import { InfoContinent } from '../../components/InfoContinent'
@@ -15,7 +16,7 @@ export default function Continent() {
       <Header />
       <ContinentBanner />
       <InfoContinent />
-      <h1>continent</h1>
+      <Cities />
     </Flex>
   )
 }
