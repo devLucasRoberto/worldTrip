@@ -16,8 +16,8 @@ import {
 
 type Country = {
   info: string
-  countries: string
-  languages: string
+  countries: number
+  languages: number
 }
 
 interface InfoContinentProps {

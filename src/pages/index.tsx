@@ -7,6 +7,7 @@ import { TravelTypes } from '../components/TravelTypes'
 import { api } from '../services/api'
 
 type Continent = {
+  id: number
   title: string
   subtitle: string
   slug: string
@@ -68,6 +69,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const continents = services.data.map((data: Continent) => {
     return {
+      id: data.id,
       title: data.title,
       subtitle: data.subtitle,
       slug: data.slug,

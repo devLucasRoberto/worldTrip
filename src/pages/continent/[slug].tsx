@@ -7,18 +7,29 @@ import { InfoContinent } from '../../components/InfoContinent'
 import { api } from '../../services/api'
 
 type Country = {
+  id: number
   title: string
   info: string
   imageBanner: string
-  countries: string
-  languages: string
+  countries: number
+  languages: number
+}
+
+type Cities = {
+  id: number
+  continentId: number
+  city: string
+  country: string
+  image: string
+  flag: string
 }
 
 interface ContinentProps {
   country: Country[]
+  cities: Cities[]
 }
 
-export default function Continent({ country }: ContinentProps) {
+export default function Continent({ country, cities }: ContinentProps) {
   return (
     <Flex
       w="100%"
@@ -30,7 +41,7 @@ export default function Continent({ country }: ContinentProps) {
       <Header />
       <ContinentBanner country={country} />
       <InfoContinent country={country} />
-      <Cities />
+      <Cities cities={cities} />
     </Flex>
   )
 }
@@ -50,12 +61,24 @@ type Params = {
 
 export const getStaticProps = async ({ params }: Params) => {
   const { slug } = params
-  const ResponseCountry = await api.get(`continents?slug=${slug}`).then()
+  const ResponseCountry = await api.get(`continents?slug=${slug}`)
   const country = ResponseCountry.data
+  if (country <= 0) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false
+      }
+    }
+  }
+
+  const ResponseCities = await api.get(`cities?continentId=${country[0].id}`)
+  const cities = ResponseCities.data
 
   return {
     props: {
-      country
+      country,
+      cities
     },
     revalidate: 60 * 60 * 24 // 24h
   }

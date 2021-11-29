@@ -1,7 +1,21 @@
 import { Box, Text, SimpleGrid } from '@chakra-ui/react'
 import { CityCard } from './CityCard'
 
-export function Cities() {
+type Cities = {
+  id: number
+  continentId: number
+  city: string
+  country: string
+  image: string
+  flag: string
+}
+
+interface CitiesProps {
+  cities: Cities[]
+}
+
+export function Cities({ cities }: CitiesProps) {
+  console.log(cities)
   return (
     <Box
       w="100%"
@@ -23,40 +37,15 @@ export function Cities() {
         spacing={['20px', '25px', '35px', '45px']}
         minChildWidth="256px"
       >
-        <CityCard
-          city="Londres"
-          country="Reino Unido"
-          image="/cities/londres.png"
-          flag="/flags/reinoUnido.png"
-        />
-
-        <CityCard
-          city="Paris"
-          country="França"
-          image="/cities/paris.png"
-          flag="/flags/franca.png"
-        />
-
-        <CityCard
-          country="Roma"
-          city="Itália"
-          image="/cities/roma.png"
-          flag="/flags/italia.png"
-        />
-
-        <CityCard
-          country="Praga"
-          city="República Tcheca"
-          image="/cities/praga.png"
-          flag="/flags/republicaTcheca.png"
-        />
-
-        <CityCard
-          country="Amsterdã"
-          city="Holanda"
-          image="/cities/amsterda.png"
-          flag="/flags/holanda.png"
-        />
+        {cities.map(city => (
+          <CityCard
+            key={city.id}
+            city={city.city}
+            country={city.country}
+            image={`/cities/${city.image}`}
+            flag={`/flags/${city.flag}`}
+          />
+        ))}
       </SimpleGrid>
     </Box>
   )
