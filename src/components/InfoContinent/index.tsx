@@ -120,7 +120,7 @@ export function InfoContinent({ country, cities }: InfoContinentProps) {
                     <PopoverArrow />
                     <PopoverCloseButton />
 
-                    <Box color="gray.500" fontSize="1.25rem" fontWeight="600">
+                    <Box color="gray.500" fontSize="1rem" fontWeight="600">
                       {cities.map(city => (
                         <PopoverBody key={city.id}>{city.city}</PopoverBody>
                       ))}
