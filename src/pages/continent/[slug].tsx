@@ -40,7 +40,7 @@ export default function Continent({ country, cities }: ContinentProps) {
     >
       <Header />
       <ContinentBanner country={country} />
-      <InfoContinent country={country} />
+      <InfoContinent country={country} cities={cities} />
       <Cities cities={cities} />
     </Flex>
   )

@@ -20,11 +20,17 @@ type Country = {
   languages: number
 }
 
-interface InfoContinentProps {
-  country: Country[]
+type Cities = {
+  id: number
+  city: string
 }
 
-export function InfoContinent({ country }: InfoContinentProps) {
+interface InfoContinentProps {
+  country: Country[]
+  cities: Cities[]
+}
+
+export function InfoContinent({ country, cities }: InfoContinentProps) {
   return (
     <Box
       maxWidth="1176px"
@@ -115,11 +121,9 @@ export function InfoContinent({ country }: InfoContinentProps) {
                     <PopoverCloseButton />
 
                     <Box color="gray.500" fontSize="1.25rem" fontWeight="600">
-                      <PopoverBody>Londres</PopoverBody>
-                      <PopoverBody>Paris</PopoverBody>
-                      <PopoverBody>Roma</PopoverBody>
-                      <PopoverBody>Praga</PopoverBody>
-                      <PopoverBody>Amsterdã</PopoverBody>
+                      {cities.map(city => (
+                        <PopoverBody key={city.id}>{city.city}</PopoverBody>
+                      ))}
                     </Box>
                   </PopoverContent>
                 </Popover>
