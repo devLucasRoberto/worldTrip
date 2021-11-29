@@ -14,7 +14,17 @@ import {
   Button
 } from '@chakra-ui/react'
 
-export function InfoContinent() {
+type Country = {
+  info: string
+  countries: string
+  languages: string
+}
+
+interface InfoContinentProps {
+  country: Country[]
+}
+
+export function InfoContinent({ country }: InfoContinentProps) {
   return (
     <Box
       maxWidth="1176px"
@@ -29,10 +39,7 @@ export function InfoContinent() {
           fontWeight="400"
           color="gray.600"
         >
-          A Europa é, por convenção, um dos seis continentes do mundo.
-          Compreendendo a península ocidental da Eurásia, a Europa geralmente
-          divide-se da Ásia a leste pela divisória de águas dos montes Urais, o
-          rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste
+          {country[0].info}
         </Text>
         <Flex justifyContent="space-between" alignItems="center">
           <VStack spacing="0" my={['16px', '16px', '0px', '0px']}>
@@ -41,7 +48,7 @@ export function InfoContinent() {
               fontWeight="600"
               color="yellow.500"
             >
-              50
+              {country[0].countries}
             </Text>
             <Text
               fontSize={['18px', '20px', '20px', '1.5rem']}
@@ -58,7 +65,7 @@ export function InfoContinent() {
               fontWeight="600"
               color="yellow.500"
             >
-              60
+              {country[0].languages}
             </Text>
             <Text
               fontSize={['18px', '20px', '20px', '1.5rem']}

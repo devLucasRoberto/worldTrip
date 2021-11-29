@@ -1,9 +1,22 @@
 import { Image, Box, Text, Flex } from '@chakra-ui/react'
 
-export function ContinentBanner() {
+type Country = {
+  title: string
+  imageBanner: string
+}
+
+interface ContinentBannerProps {
+  country: Country[]
+}
+
+export function ContinentBanner({ country }: ContinentBannerProps) {
   return (
     <Box position="relative">
-      <Image src="/europa.png" maxHeight="500px" />
+      <Image
+        src={`/${country[0].imageBanner}`}
+        alt={country[0].title}
+        maxHeight="500px"
+      />
       <Flex position="absolute" zIndex="5" top="0" h="100%" w="100%">
         <Flex
           alignItems={['center', 'center', 'center', 'end']}
@@ -17,7 +30,7 @@ export function ContinentBanner() {
             fontWeight="600"
             color="gray.50"
           >
-            Europa
+            {country[0].title}
           </Text>
         </Flex>
       </Flex>
