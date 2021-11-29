@@ -7,7 +7,7 @@ export function TravelTypes() {
       maxWidth="1176px"
       width="100%"
       mx="auto"
-      mt="114px"
+      mt={['36px', '48px', '60px', '98px']}
       px={['50', '20px', '16px', '16px']}
       justifyContent={[
         'center',

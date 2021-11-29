@@ -19,7 +19,13 @@ export default function Home() {
 
       <Center w="100%">
         <VStack>
-          <Box bg="gray.600" h="2px" w="90px" mt="80px" mb="52px" />
+          <Box
+            bg="gray.600"
+            h="2px"
+            w="90px"
+            mt={['36px', '48px', '60px', '80px']}
+            mb={['24px', '30px', '40px', '52px']}
+          />
 
           <Text
             color="gray.600"

@@ -19,8 +19,8 @@ export function SwiperC() {
       width="100%"
       height={['250px', '450px']}
       mx="auto"
-      mt="52px"
-      mb="40px"
+      mt={['20px', '30px', '40px', '52px']}
+      mb={['24px', '30px', '45px', '40px']}
     >
       <Swiper
         spaceBetween={30}
