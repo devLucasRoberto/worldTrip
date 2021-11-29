@@ -16,38 +16,68 @@ import {
 
 export function InfoContinent() {
   return (
-    <Box maxWidth="1160px" width="100%" mx="auto" my="80px">
-      <SimpleGrid columns={2} minChildWidth="400px" spacingX="70px">
+    <Box
+      maxWidth="1176px"
+      width="100%"
+      mx="auto"
+      my={['24px', '24px', '50px', '80px']}
+      px="16px"
+    >
+      <SimpleGrid columns={2} minChildWidth={['1', '378px']} spacingX="70px">
         <Text fontSize="1.5rem" fontWeight="400" color="gray.600">
           A Europa é, por convenção, um dos seis continentes do mundo.
           Compreendendo a península ocidental da Eurásia, a Europa geralmente
           divide-se da Ásia a leste pela divisória de águas dos montes Urais, o
           rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste
         </Text>
-        <Flex height="100%" width="100%" justifyContent="space-between">
-          <VStack spacing="0">
-            <Text fontSize="3rem" fontWeight="600" color="yellow.500">
+        <Flex justifyContent="space-between" alignItems="center">
+          <VStack spacing="0" my={['16px', '16px', '0px', '0px']}>
+            <Text
+              fontSize={['24px', '35px', '40px', '3rem']}
+              fontWeight="600"
+              color="yellow.500"
+            >
               50
             </Text>
-            <Text fontSize="1.5rem" fontWeight="600" color="gray.600">
+            <Text
+              fontSize={['18px', '20px', '20px', '1.5rem']}
+              fontWeight="600"
+              color="gray.600"
+            >
               países
             </Text>
           </VStack>
 
           <VStack spacing="0">
-            <Text fontSize="3rem" fontWeight="600" color="yellow.500">
+            <Text
+              fontSize={['24px', '35px', '40px', '3rem']}
+              fontWeight="600"
+              color="yellow.500"
+            >
               60
             </Text>
-            <Text fontSize="1.5rem" fontWeight="600" color="gray.600">
+            <Text
+              fontSize={['18px', '20px', '20px', '1.5rem']}
+              fontWeight="600"
+              color="gray.600"
+            >
               línguas
             </Text>
           </VStack>
 
           <VStack spacing="0">
-            <Text fontSize="3rem" fontWeight="600" color="yellow.500">
+            <Text
+              fontSize={['24px', '35px', '40px', '3rem']}
+              fontWeight="600"
+              color="yellow.500"
+            >
               27
             </Text>
-            <Text fontSize="1.5rem" fontWeight="600" color="gray.600">
+            <Text
+              fontSize={['18px', '20px', '20px', '1.5rem']}
+              fontWeight="600"
+              color="gray.600"
+            >
               <Flex alignItems="center">
                 cidades +100
                 <Popover>

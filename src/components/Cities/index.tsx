@@ -3,7 +3,7 @@ import { CityCard } from './CityCard'
 
 export function Cities() {
   return (
-    <Box w="100%" maxWidth={1160} mx="auto" mb="35px">
+    <Box w="100%" maxWidth={1176} px="16px" mx="auto" mb="35px">
       <Text fontSize="2.25rem" fontWeight="500" color="gray.600">
         Cidades +100
       </Text>

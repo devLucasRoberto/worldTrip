@@ -4,7 +4,7 @@ import { TravelTypeCard } from './TravelTypeCard'
 export function TravelTypes() {
   return (
     <Flex
-      maxWidth="1160px"
+      maxWidth="1176px"
       width="100%"
       mx="auto"
       mt="114px"
