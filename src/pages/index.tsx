@@ -1,10 +1,23 @@
 import { Flex, Box, Center, Text, VStack } from '@chakra-ui/react'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import { Banner } from '../components/Banner'
 import { Header } from '../components/Header'
 import { SwiperC } from '../components/SwiperC'
 import { TravelTypes } from '../components/TravelTypes'
+import { api } from '../services/api'
 
-export default function Home() {
+type Continent = {
+  title: string
+  subtitle: string
+  slug: string
+  imageSwiper: string
+}
+
+interface ContinentsProps {
+  continents: Continent[]
+}
+
+export default function Home({ continents }: ContinentsProps) {
   return (
     <Flex
       w="100%"
@@ -44,8 +57,28 @@ export default function Home() {
         </VStack>
       </Center>
       <Box>
-        <SwiperC />
+        <SwiperC continents={continents} />
       </Box>
     </Flex>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const services = await api.get('continents')
+
+  const continents = services.data.map((data: Continent) => {
+    return {
+      title: data.title,
+      subtitle: data.subtitle,
+      slug: data.slug,
+      imageSwiper: data.imageSwiper
+    }
+  })
+
+  return {
+    props: {
+      continents
+    },
+    revalidate: 60 * 60 * 5 // 5h
+  }
 }
