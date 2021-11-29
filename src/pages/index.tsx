@@ -21,10 +21,18 @@ export default function Home() {
         <VStack>
           <Box bg="gray.600" h="2px" w="90px" mt="80px" mb="52px" />
 
-          <Text color="gray.600" fontSize="2.25rem" fontWeight="500">
+          <Text
+            color="gray.600"
+            fontSize={['20px', '25px', '30px', '2.25rem']}
+            fontWeight="500"
+          >
             Vamos nessa?
           </Text>
-          <Text color="gray.600" fontSize="2.25rem" fontWeight="500">
+          <Text
+            color="gray.600"
+            fontSize={['18px', '25px', '30px', '2.25rem']}
+            fontWeight="500"
+          >
             Então escolha seu continente
           </Text>
         </VStack>

@@ -6,7 +6,11 @@ export function Header() {
   const { asPath } = useRouter()
 
   return (
-    <Flex my={27} mx={140} alignItems="center">
+    <Flex
+      mx={['22px', '40px', '80px', '140px']}
+      h={['50px', '65px', '80px', '100px']}
+      alignItems="center"
+    >
       {asPath != '/' && (
         <Box>
           <Link href="/" passHref>
@@ -18,8 +22,8 @@ export function Header() {
               <Image
                 src="/assets/back.svg"
                 alt="back"
-                width="32px"
-                height="32px"
+                width={['16px', '23px', '28px', '32px']}
+                height={['16px', '23px', '28px', '32px']}
               />
             </ChakraLink>
           </Link>
@@ -27,7 +31,12 @@ export function Header() {
       )}
 
       <Link href="/" passHref>
-        <Box as="a" mx="auto">
+        <Box
+          as="a"
+          mx="auto"
+          w={['81px', '99px', '147px', '184px']}
+          h={['20px', '25px', '37px', '46px']}
+        >
           <Image src="/assets/logo.png" alt="worldtrip" />
         </Box>
       </Link>
