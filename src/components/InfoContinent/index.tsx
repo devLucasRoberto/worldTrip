@@ -24,7 +24,11 @@ export function InfoContinent() {
       px="16px"
     >
       <SimpleGrid columns={2} minChildWidth={['1', '378px']} spacingX="70px">
-        <Text fontSize="1.5rem" fontWeight="400" color="gray.600">
+        <Text
+          fontSize={['14px', '16px', '20px', '1.5rem']}
+          fontWeight="400"
+          color="gray.600"
+        >
           A Europa é, por convenção, um dos seis continentes do mundo.
           Compreendendo a península ocidental da Eurásia, a Europa geralmente
           divide-se da Ásia a leste pela divisória de águas dos montes Urais, o

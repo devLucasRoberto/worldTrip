@@ -3,11 +3,26 @@ import { CityCard } from './CityCard'
 
 export function Cities() {
   return (
-    <Box w="100%" maxWidth={1176} px="16px" mx="auto" mb="35px">
-      <Text fontSize="2.25rem" fontWeight="500" color="gray.600">
+    <Box
+      w="100%"
+      maxWidth={1176}
+      px="16px"
+      mx="auto"
+      mb={['16px', '20px', '28px', '35px']}
+    >
+      <Text
+        fontSize="2.25rem"
+        fontWeight="500"
+        color="gray.600"
+        mb={['24px', '30px', '35px', '40px']}
+      >
         Cidades +100
       </Text>
-      <SimpleGrid columns={4} spacing="45px" minChildWidth="256px">
+      <SimpleGrid
+        columns={4}
+        spacing={['20px', '25px', '35px', '45px']}
+        minChildWidth="256px"
+      >
         <CityCard
           city="Londres"
           country="Reino Unido"
