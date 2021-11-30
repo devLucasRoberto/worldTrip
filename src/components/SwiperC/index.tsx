@@ -45,8 +45,8 @@ export function SwiperC({ continents }: SwiperProps) {
         navigation={true}
         className="mySwiper"
       >
-        {continents.map(continent => (
-          <SwiperSlide>
+        {continents.map((continent, index) => (
+          <SwiperSlide key={index}>
             <Link href={`/continent/${continent.slug}`}>
               <ChakraLink>
                 <Flex

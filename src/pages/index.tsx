@@ -1,6 +1,7 @@
 import { Flex, Box, Center, Text, VStack } from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
+import { useState } from 'react'
 import { Banner } from '../components/Banner'
 import { Header } from '../components/Header'
 import { SwiperC } from '../components/SwiperC'
@@ -16,10 +17,12 @@ type Continent = {
 }
 
 interface ContinentsProps {
-  continents: Continent[]
+  continent: Continent[]
 }
 
-export default function Home({ continents }: ContinentsProps) {
+export default function Home({ continent }: ContinentsProps) {
+  const [continents, seContinents] = useState(continent)
+
   return (
     <>
       <Head>
@@ -74,7 +77,7 @@ export default function Home({ continents }: ContinentsProps) {
 export const getStaticProps: GetStaticProps = async () => {
   const services = await api.get('continents')
 
-  const continents = services.data.map((data: Continent) => {
+  const continent = services.data.map((data: Continent) => {
     return {
       id: data.id,
       title: data.title,
@@ -86,7 +89,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      continents
+      continent
     },
     revalidate: 60 * 60 * 24 // 24h
   }

@@ -6,6 +6,7 @@ import { Header } from '../../components/Header'
 import { InfoContinent } from '../../components/InfoContinent'
 import { api } from '../../services/api'
 import Head from 'next/head'
+import { useState } from 'react'
 
 type Country = {
   id: number
@@ -26,11 +27,14 @@ type Cities = {
 }
 
 interface ContinentProps {
-  country: Country[]
-  cities: Cities[]
+  dCountry: Country[]
+  dCities: Cities[]
 }
 
-export default function Continent({ country, cities }: ContinentProps) {
+export default function Continent({ dCountry, dCities }: ContinentProps) {
+  const [country, setCountry] = useState(dCountry)
+  const [cities, setCities] = useState(dCities)
+
   return (
     <>
       <Head>
@@ -68,8 +72,8 @@ type Params = {
 export const getStaticProps = async ({ params }: Params) => {
   const { slug } = params
   const ResponseCountry = await api.get(`continents?slug=${slug}`)
-  const country = ResponseCountry.data
-  if (country <= 0) {
+  const dCountry = ResponseCountry.data
+  if (dCountry <= 0) {
     return {
       redirect: {
         destination: '/',
@@ -78,13 +82,13 @@ export const getStaticProps = async ({ params }: Params) => {
     }
   }
 
-  const ResponseCities = await api.get(`cities?continentId=${country[0].id}`)
-  const cities = ResponseCities.data
+  const ResponseCities = await api.get(`cities?continentId=${dCountry[0].id}`)
+  const dCities = ResponseCities.data
 
   return {
     props: {
-      country,
-      cities
+      dCountry,
+      dCities
     },
     revalidate: 60 * 60 * 24 // 24h
   }
