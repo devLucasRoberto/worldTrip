@@ -1,5 +1,6 @@
 import { Flex, Box, Center, Text, VStack } from '@chakra-ui/react'
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { GetStaticProps } from 'next'
+import Head from 'next/head'
 import { Banner } from '../components/Banner'
 import { Header } from '../components/Header'
 import { SwiperC } from '../components/SwiperC'
@@ -20,47 +21,53 @@ interface ContinentsProps {
 
 export default function Home({ continents }: ContinentsProps) {
   return (
-    <Flex
-      w="100%"
-      maxWidth={1440}
-      direction="column"
-      mx="auto"
-      minHeight="100hv"
-    >
-      <Header />
-      <Banner />
-      <TravelTypes />
+    <>
+      <Head>
+        <title>Home | worldtrip</title>
+      </Head>
 
-      <Center w="100%">
-        <VStack>
-          <Box
-            bg="gray.600"
-            h="2px"
-            w="90px"
-            mt={['36px', '48px', '60px', '80px']}
-            mb={['24px', '30px', '40px', '52px']}
-          />
+      <Flex
+        w="100%"
+        maxWidth={1440}
+        direction="column"
+        mx="auto"
+        minHeight="100hv"
+      >
+        <Header />
+        <Banner />
+        <TravelTypes />
 
-          <Text
-            color="gray.600"
-            fontSize={['20px', '25px', '30px', '2.25rem']}
-            fontWeight="500"
-          >
-            Vamos nessa?
-          </Text>
-          <Text
-            color="gray.600"
-            fontSize={['18px', '25px', '30px', '2.25rem']}
-            fontWeight="500"
-          >
-            Então escolha seu continente
-          </Text>
-        </VStack>
-      </Center>
-      <Box>
-        <SwiperC continents={continents} />
-      </Box>
-    </Flex>
+        <Center w="100%">
+          <VStack>
+            <Box
+              bg="gray.600"
+              h="2px"
+              w="90px"
+              mt={['36px', '48px', '60px', '80px']}
+              mb={['24px', '30px', '40px', '52px']}
+            />
+
+            <Text
+              color="gray.600"
+              fontSize={['20px', '25px', '30px', '2.25rem']}
+              fontWeight="500"
+            >
+              Vamos nessa?
+            </Text>
+            <Text
+              color="gray.600"
+              fontSize={['18px', '25px', '30px', '2.25rem']}
+              fontWeight="500"
+            >
+              Então escolha seu continente
+            </Text>
+          </VStack>
+        </Center>
+        <Box>
+          <SwiperC continents={continents} />
+        </Box>
+      </Flex>
+    </>
   )
 }
 

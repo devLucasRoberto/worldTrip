@@ -15,7 +15,6 @@ interface CitiesProps {
 }
 
 export function Cities({ cities }: CitiesProps) {
-  console.log(cities)
   return (
     <Box
       w="100%"

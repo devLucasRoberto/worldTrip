@@ -5,6 +5,7 @@ import { ContinentBanner } from '../../components/ContinentBanner'
 import { Header } from '../../components/Header'
 import { InfoContinent } from '../../components/InfoContinent'
 import { api } from '../../services/api'
+import Head from 'next/head'
 
 type Country = {
   id: number
@@ -31,18 +32,23 @@ interface ContinentProps {
 
 export default function Continent({ country, cities }: ContinentProps) {
   return (
-    <Flex
-      w="100%"
-      maxWidth={1440}
-      direction="column"
-      mx="auto"
-      minHeight="100hv"
-    >
-      <Header />
-      <ContinentBanner country={country} />
-      <InfoContinent country={country} cities={cities} />
-      <Cities cities={cities} />
-    </Flex>
+    <>
+      <Head>
+        <title>Home | {country[0].title}</title>
+      </Head>
+      <Flex
+        w="100%"
+        maxWidth={1440}
+        direction="column"
+        mx="auto"
+        minHeight="100hv"
+      >
+        <Header />
+        <ContinentBanner country={country} />
+        <InfoContinent country={country} cities={cities} />
+        <Cities cities={cities} />
+      </Flex>
+    </>
   )
 }
 
